@@ -22,6 +22,7 @@
 
             <TextView
                 android:layout_width="match_parent"
+                android:id="@+id/name"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20px"
                 android:layout_marginTop="20px"
@@ -37,6 +38,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20px"
+                android:id="@+id/position"
                 android:layout_marginTop="20px"
                 android:text="project owner"
                 android:textSize="20px"
@@ -49,6 +51,7 @@
 
             <TextView
                 android:layout_width="wrap_content"
+                android:id="@+id/message"
                 android:layout_height="wrap_content"
                 android:padding="30px"
                 android:textColor="#ffff"
