@@ -26,7 +26,10 @@ public class Login extends AppCompatActivity {
         binding = ActivityLoginBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         auth =  FirebaseAuth.getInstance();
-
+        if(auth.getCurrentUser()!= null) {
+            Intent i = new Intent(getApplicationContext(), ChatActivity.class);
+            startActivity(i);
+        }
         binding.submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
