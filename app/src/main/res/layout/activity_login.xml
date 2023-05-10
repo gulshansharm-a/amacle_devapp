@@ -20,7 +20,7 @@
 
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/submit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="50px"
@@ -33,11 +33,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.575"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText3" />
+        app:layout_constraintTop_toBottomOf="@+id/pass" />
 
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/mail"
         android:layout_width="match_parent"
         android:layout_height="120px"
         android:layout_marginStart="90px"
@@ -56,12 +56,12 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="50px"
         android:src="@drawable/baseline_mail_24"
-        app:layout_constraintBottom_toBottomOf="@+id/editText"
-        app:layout_constraintStart_toStartOf="@+id/editText"
+        app:layout_constraintBottom_toBottomOf="@+id/mail"
+        app:layout_constraintStart_toStartOf="@+id/mail"
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/pass"
         android:layout_width="match_parent"
         android:layout_height="120px"
         android:layout_marginStart="90px"
@@ -73,16 +73,16 @@
         android:paddingTop="20px"
         app:layout_constraintEnd_toStartOf="@+id/guideline3"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
+        app:layout_constraintTop_toBottomOf="@+id/mail" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="19dp"
         android:src="@drawable/baseline_lock_open_24"
-        app:layout_constraintBottom_toBottomOf="@+id/editText3"
-        app:layout_constraintStart_toStartOf="@+id/editText3"
-        app:layout_constraintTop_toTopOf="@+id/editText3" />
+        app:layout_constraintBottom_toBottomOf="@+id/pass"
+        app:layout_constraintStart_toStartOf="@+id/pass"
+        app:layout_constraintTop_toTopOf="@+id/pass" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"

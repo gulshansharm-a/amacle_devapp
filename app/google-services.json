@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "562799577502",
+    "project_id": "amacle",
+    "storage_bucket": "amacle.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:562799577502:android:ddda369fcaa9bc7a5a6e8f",
+        "android_client_info": {
+          "package_name": "com.example.amacle"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "562799577502-r48o670it3qkc48ae16qq9ggal15sfin.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBm4gb-zeJ2fSnujgqEizD6c2gqePfsZHQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "562799577502-r48o670it3qkc48ae16qq9ggal15sfin.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
