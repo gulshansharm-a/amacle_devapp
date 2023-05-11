@@ -18,10 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 public class HomeFragment extends Fragment {
     private FragmentHomeBinding binding;
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
-        HomeViewModel homeViewModel =
-                new ViewModelProvider(this).get(HomeViewModel.class);
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {HomeViewModel homeViewModel = new ViewModelProvider(this).get(HomeViewModel.class);
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
         LineChart chart = root.findViewById(R.id.chart);
@@ -32,9 +29,9 @@ public class HomeFragment extends Fragment {
         data1.add(new Entry(3, 2));
         data1.add(new Entry(4, 7));
         ArrayList<Entry> data2 = new ArrayList<>();
-        data2.add(new Entry(0, 2));
+        data2.add(new Entry(0, 8));
         data2.add(new Entry(1, 5));
-        data2.add(new Entry(2, 3));
+        data2.add(new Entry(2, 0));
         data2.add(new Entry(3, 6));
         data2.add(new Entry(4, 4));
         LineDataSet dataSet1 = new LineDataSet(data1, "Line 1");
