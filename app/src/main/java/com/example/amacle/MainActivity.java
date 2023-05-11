@@ -2,9 +2,6 @@ package com.example.amacle;
 
 import android.os.Bundle;
 
-import com.example.amacle.ui.Popup;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -12,7 +9,8 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.example.amacle.databinding.ActivityMainBinding;
-import com.google.firebase.database.FirebaseDatabase;
+import com.example.amacle.ui.Popup;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity implements Popup.PopupListner {
 
@@ -33,6 +31,7 @@ public class MainActivity extends AppCompatActivity implements Popup.PopupListne
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
     }
+
 
     @Override
     public void applyTexts(String topic, String description) {
