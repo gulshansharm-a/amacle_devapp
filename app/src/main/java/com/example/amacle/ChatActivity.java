@@ -46,19 +46,26 @@ ArrayList<Chat> chatArrayList;
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         chatArrayList = new ArrayList<>();
 
-        FirebaseDatabase.getInstance().getReference().child("groups").child("akdsjkjdjfd").addValueEventListener(new ValueEventListener() {
+        FirebaseDatabase.getInstance().getReference().child("groups").child(GroupId).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
                 for(DataSnapshot shapshotC:snapshot.getChildren()) {
                 Chat chat = new Chat();
-                chat.userId = shapshotC.child("message").getValue().toString();
-                chat.message = shapshotC.child("message").getValue().toString();
-                chat.position = shapshotC.child("message").getValue().toString();
-                chatArrayList.add(chat);
+                    if (shapshotC.child("position").getValue() != null) {
+                        chat.userId = shapshotC.child("position").getValue().toString();
+                    }
+                    if (shapshotC.child("message").getValue() != null) {
+                        chat.message = shapshotC.child("message").getValue().toString();
+                    }
+                    if (shapshotC.child("position").getValue() != null) {
+                        chat.position = shapshotC.child("position").getValue().toString();
+                    }
+                    chatArrayList.add(chat);
             }
                 Toast.makeText(ChatActivity.this, "size "+chatArrayList.size(), Toast.LENGTH_SHORT).show();
                 chatAdopter = new ChatAdapter(ChatActivity.this,chatArrayList);
+                recyclerView.scrollToPosition(chatAdopter.getItemCount() - 1);
                 recyclerView.setAdapter(chatAdopter);
             }
 
@@ -75,7 +82,7 @@ ArrayList<Chat> chatArrayList;
              chatRef.child("userID").setValue(userId);
              chatRef.child("position").setValue(position);
              chatRef.child("message").setValue(binding.message.getText().toString());
-
+             binding.message.setText("");
             }
         });
     }

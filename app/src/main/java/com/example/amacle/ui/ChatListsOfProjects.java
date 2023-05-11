@@ -40,8 +40,8 @@ public class ChatListsOfProjects extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for (DataSnapshot snap: snapshot.getChildren()) {
                     ChatList chatList = new ChatList();
-                    chatList.name = snap.child("name").toString();
-                    chatList.groupid = snap.child("groupId").toString();
+                    chatList.name = snap.child("name").getValue().toString();
+                    chatList.groupid = snap.child("groupId").getValue().toString();
                     chatArrayList.add(chatList);
                   //  Toast.makeText(ChatListsOfProjects.this, chatArrayList.size() , Toast.LENGTH_SHORT).show();
                 }
