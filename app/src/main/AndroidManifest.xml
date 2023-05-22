@@ -16,6 +16,7 @@
         android:theme="@style/Theme.Amacle"
         tools:targetApi="31">
         <activity
+
             android:name=".ArunTut"
             android:exported="true" >
 
@@ -32,7 +33,6 @@
             android:name=".ChatActivity"
             android:exported="true">
 
-        </activity>
         <activity
             android:name=".Login"
             android:exported="false" />
@@ -45,6 +45,7 @@
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>

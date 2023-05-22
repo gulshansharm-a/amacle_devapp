@@ -16,6 +16,9 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.example.amacle.databinding.ActivityMainBinding;
 
+import com.example.amacle.ui.Popup;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -55,6 +58,7 @@ public class MainActivity extends AppCompatActivity implements Popup.PopupListne
         git.initilize();
 
     }
+
 
     @Override
     public void applyTexts(String topic, String description) {
