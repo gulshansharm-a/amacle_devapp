@@ -41,12 +41,13 @@ public class Popup extends AppCompatDialogFragment {
                                 String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
                                 DatabaseReference todayTaskDBref = FirebaseDatabase.getInstance().getReference().child("users").child(uid)
                                         .child("todayTasks").push();
-                                TextView topic_text_view = view.findViewById(R.id.editexttopic);
-                                TextView des = view.findViewById(R.id.Edittextdescription);
+                                TextView topic_text_view = view.findViewById(R.id.editexttp);
+                                TextView gitLinkText = view.findViewById(R.id.gitlink);
+                                TextView des = view.findViewById(R.id.Edittextds);
                                 todayTaskDBref.child("topic").setValue(topic_text_view.getText().toString());
                                 todayTaskDBref.child("des").setValue(des.getText().toString());}});
-        editTexttopic=view.findViewById(R.id.editexttopic);
-        editTextdescription=view.findViewById(R.id.Edittextdescription);
+        editTexttopic=view.findViewById(R.id.editexttp);
+        editTextdescription=view.findViewById(R.id.Edittextds);
         return builder.create();}
     @Override
     public void onAttach(@NonNull Context context) {
@@ -54,4 +55,6 @@ public class Popup extends AppCompatDialogFragment {
         try {
             listner=(PopupListner) context;
         } catch (ClassCastException e) {}}
-    public interface PopupListner{ void applyTexts(String topic, String description);}}
+    public interface PopupListner{ void applyTexts(String topic, String description);}
+}
+
