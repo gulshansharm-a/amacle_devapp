@@ -18,6 +18,7 @@ import com.example.amacle.databinding.ActivityMainBinding;
 
 import com.example.amacle.ui.Popup;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.database.FirebaseDatabase;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
@@ -42,8 +43,11 @@ public class MainActivity extends AppCompatActivity implements Popup.PopupListne
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        getSupportActionBar().hide();
+        FirebaseDatabase.getInstance().setPersistenceEnabled(true);
 
         BottomNavigationView navView = findViewById(R.id.nav_view);
 

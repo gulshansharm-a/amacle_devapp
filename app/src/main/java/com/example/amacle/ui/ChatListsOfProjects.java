@@ -31,7 +31,6 @@ public class ChatListsOfProjects extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding  = ActivityChatListsOfProjectsBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        FirebaseDatabase.getInstance().setPersistenceEnabled(true);
         recyclerView = binding.projectList;
         recyclerView.hasFixedSize();
         recyclerView.setLayoutManager(new LinearLayoutManager(this));

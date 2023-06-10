@@ -1,10 +1,10 @@
 package com.example.amacle.model;
 
 public class HomeProjectModel {
-    String ProjectName, Deadline,Dealy,Expected,progress,budget,extrabudget,nextMeeting;
+    String name, Deadline,Dealy,Expected,progress,budget,extrabudget,nextMeeting,completed,image;
 
-    public HomeProjectModel(String projectName, String deadline, String dealy, String expected, String progress, String budget, String extrabudget, String nextMeeting) {
-        ProjectName = projectName;
+    public HomeProjectModel(String name, String deadline, String dealy, String expected, String progress, String budget, String extrabudget, String nextMeeting,String completed,String image) {
+        name = name;
         Deadline = deadline;
         Dealy = dealy;
         Expected = expected;
@@ -12,14 +12,44 @@ public class HomeProjectModel {
         this.budget = budget;
         this.extrabudget = extrabudget;
         this.nextMeeting = nextMeeting;
+        this.completed = completed;
+        this.image = image;
+    }
+
+    public HomeProjectModel() {
+
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public String getCompleted() {
+        return completed;
+    }
+
+    public void setCompleted(String completed) {
+        this.completed = completed;
     }
 
     public String getProjectName() {
-        return ProjectName;
+        return name;
     }
 
     public void setProjectName(String projectName) {
-        ProjectName = projectName;
+        name = projectName;
     }
 
     public String getDeadline() {

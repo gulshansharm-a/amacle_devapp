@@ -5,19 +5,34 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.viewpager.widget.ViewPager;
+
+import com.example.amacle.HomeTabs.CompletedProjectsFragment;
+import com.example.amacle.HomeTabs.GrabProjectsFragment;
+import com.example.amacle.HomeTabs.OnGoingProjectsFragment;
 import com.example.amacle.R;
+import com.example.amacle.adapters.HomeTabAdopter;
 import com.example.amacle.databinding.FragmentHomeBinding;
 import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
 import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
+import com.google.android.material.tabs.TabLayout;
+
 import java.util.ArrayList;
 import java.util.List;
 public class HomeFragment extends Fragment {
     private FragmentHomeBinding binding;
+    private TabLayout tabLayout;
+    private ViewPager viewPager;
+    private OnGoingProjectsFragment onGoingProjectsFragment;
+
+
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {HomeViewModel homeViewModel = new ViewModelProvider(this).get(HomeViewModel.class);
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
@@ -48,6 +63,22 @@ public class HomeFragment extends Fragment {
         LineData lineData = new LineData(dataSets);
         chart.setData(lineData);
         chart.invalidate();
-        return root;}
+        //after
+
+        tabLayout = binding.tabLayout;
+        viewPager = binding.viewPager;
+        AppCompatActivity activity = (AppCompatActivity) getActivity();
+        FragmentManager fragmentManager = activity.getSupportFragmentManager();
+        HomeTabAdopter adapter = new HomeTabAdopter(fragmentManager);
+        adapter.addFragment(new GrabProjectsFragment(), "Grab");
+        adapter.addFragment(new OnGoingProjectsFragment(), "OnGoing");
+        adapter.addFragment(new CompletedProjectsFragment(), "Completed");
+        viewPager.setAdapter(adapter);
+        onGoingProjectsFragment = new OnGoingProjectsFragment();
+        // Connect the TabLayout with the ViewPager
+        tabLayout.setupWithViewPager(viewPager);
+
+        return root;
+    }
     @Override
     public void onDestroyView(){super.onDestroyView();binding = null;}}
